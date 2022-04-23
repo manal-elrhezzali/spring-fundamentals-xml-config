@@ -17,9 +17,11 @@ public class SpeakerServiceImpl implements SpeakerService{
     this.repository = repository;
   }
 
+  //the autowiring by setter requires this constructor
   public SpeakerServiceImpl() {
   }
 
+  //since we are doing autowiring byType the name of the setter doesn't matter
   public void setSpeakerRepository(SpeakerRepository repository) {
     this.repository = repository;
   }
