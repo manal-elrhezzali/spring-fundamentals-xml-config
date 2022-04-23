@@ -5,8 +5,10 @@
 
   <bean name="speakerRepository" class="com.manal.repository.HibernateSpeakerRepositoryImpl"/>
 
-  <bean name="speakerService" class = "com.manal.service.SpeakerServiceImpl">
-    <property name="speakerRepository" ref="speakerRepository"/>
+  <bean name="speakerService" class = "com.manal.service.SpeakerServiceImpl" autowire="constructor">
+    <!--    they are 0 based, meaning if we have multiple arguments we're going to pass in
+         we'll have 0,1,2...; so we start with 0 -->
+<!--    <constructor-arg index="0" ref="speakerRepository"/>-->
   </bean>
 
 </beans>
